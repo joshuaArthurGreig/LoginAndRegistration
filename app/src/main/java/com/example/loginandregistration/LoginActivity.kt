@@ -25,6 +25,9 @@ class LoginActivity : AppCompatActivity() {
         result : ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val intent = result.data
+
+                binding.editTextTextUserName.setText(intent?.getStringExtra(EXTRA_USERNAME))
+                binding.editTextTextPassword.setText(intent?.getStringExtra(EXTRA_PASSWORD))
             }
     }
 
@@ -48,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             // 3. start the activity
-            startActivity(registrationIntent)
+//            startActivity(registrationIntent)
 
             //3b. Alternate: could launch the activity for a result instead
             startRegistrationForResult.launch(registrationIntent)

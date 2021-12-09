@@ -2,6 +2,8 @@ package com.example.loginandregistration
 
 object RegistrationUtil {
 
+
+
     var existingUsers = listOf("cosmicF", "cosmicY", "bob", "alice")
 
     fun validateUsername(username : String) : Boolean {
@@ -9,6 +11,7 @@ object RegistrationUtil {
     }
 
     fun validatePassword(password : String, confirmPassword : String) : Boolean {
+        if(password != confirmPassword) return false
         return true
     }
 
